@@ -1,11 +1,27 @@
-#Your name goes here
+#Tenisce Richelieu
+from tkinter import 
+import tkinter.messagebox as box
 
-#Your algorithm should go here OR you should use comments throughout
+#The first step after imports is crate a window
+window = Tk()
 
-#Your code goes here
-import tkinter
-import tkinter.messagebox as box 
+#This shows up at the top of the frame
+window.title('Message Box Example')
 
+#create the dialog for the window
+def dialog():
+    var = box. askyesno('Message Box', 'Proceed?')
 
-# Create the main window
-self.main_window = tkinter.Tk()
+    if var == 1:
+        box.showinfo('Yes Box', 'Proceeding...')
+    else:
+        box.showwarning('No Box', 'Cancelling...')
+
+#creating a button
+btn = Button(window, text='Click', command= dialog)
+
+#have to pack the button
+btn.pack(padx = 150, pady = 50)
+
+#start the action and keep it going
+window.mainloop()
